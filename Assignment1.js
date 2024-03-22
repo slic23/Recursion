@@ -14,25 +14,19 @@ function fib(){
     }
 }
 
-function fibrecur(number ,c = 0 , a = 0 , b = 1 , arr=[] ){
-    if ( number == 0 ) return 0
-    else {
-
-        c = a + b  
-        a = b  
-        b = c 
-        arr.push(a)
-            
+function fibrecur(number, a = 0, b = 1, arr = []) {
+    if (number === 0) return arr;
     
-    return    arr.concat(fibrecur(number - 1 ,a , b , c , arr ))
-    }
-
-
+    let c = a + b;
+    a = b;
+    b = c;
+    arr.push(a);
+    
+    return fibrecur(number - 1, a, b, arr);
 }
 
-console.log(fibrecur(0))
+console.log(fibrecur(10))
 
-const arr = [1,2,3,4]
 
 
 
